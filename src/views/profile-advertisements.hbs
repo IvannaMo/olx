@@ -1,0 +1,89 @@
+<section class="pt-[72px] h-full flex flex-col">
+  <div class="w-full bg-white">
+    <div class="w-[1238px] mx-auto pt-12">
+      <div class="flex justify-between mb-6">
+        <h3 class="text-[rgb(0,47,52)] text-[32px] font-bold leading-[26px] mb-3">Ваші оголошення</h3>
+        <form id="logout-form" action="/users/logout" method="post">
+          <button type="submit" class="text-center outline-none no-underline rounded-md transition-all duration-300 ease-in-out relative cursor-pointer text-sm font-medium px-5 py-3 text-[#002f34] shadow-inner ml-4 float-right whitespace-nowrap" style="box-shadow: inset 0 0 0 2px #002f34;">
+            Вийти
+          </button>
+        </form>
+      </div>
+
+      <ul class="p-0 m-0 flex items-center list-none leading-1 text-sm gap-[40px] max-w-full">
+        <li class="list-none box-border flex">
+          <a href="/profile-advertisements" class="text-sm leading-none antialiased box-border flex items-center h-[56px] border-b-2 border-[#002F34] font-bold text-[#002F34] pointer-events-none">
+            Оголошення
+          </a>
+        </li>
+
+        <li class="list-none box-border flex">
+          <a href="/profile-notifications" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Повідомлення
+          </a>
+        </li>
+        <li class="list-none box-border flex">
+          <a href="/profile" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Профіль
+          </a>
+        </li>
+        <li class="list-none box-border flex">
+          <a href="/profile-settings" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Налаштування
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bg-[#f2f4f5] pb-6 flex-grow">
+    {{#if advertisements.length}}
+    <div class="flex flex-col gap-2 pt-6 w-[1238px] mx-auto">
+      {{#each advertisements}}
+      <div id="advertisement-container" data-advertisement-id="{{this.advertisementId}}" class="h-[168px] p-2 bg-white">
+        <div class="flex h-full flex-row overflow-hidden">
+          <a href="/advertisement/{{this.advertisementId}}" class="shrink-0 max-w-[45%] w-[216px] relative">
+            {{#each this.images}}
+              {{#if this.primary}}
+              <img src="{{this.imageUrl}}" class="object-cover w-full h-full" />
+              {{/if}}
+            {{/each}}
+          </a>
+          <a href="/advertisement/{{this.advertisementId}}" class="flex-grow px-2.5 py-1">
+            <div class="flex flex-col relative overflow-hidden min-h-[128px] flex-1 bg-white word-break break-word">
+              <div class="flex justify-between">
+                <h4 class="inline-block font-normal cursor-pointer text-[20px] leading-[22px] max-w-[70%] overflow-hidden text-[#002F34] break-words">{{this.title}}</h4>
+                <p class="flex items-center justify-end shrink-0 font-bold overflow-hidden text-ellipsis whitespace-nowrap box-border text-left text-[16px] leading-[20px] text-[#002F34]">{{this.price}} грн.</p>
+              </div>
+              <div class="mt-1">
+                <p>Категорія
+
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <div class="flex flex-col gap-2 ml-6 py-1 px-2">
+            <a href="/edit-advertisement/{{this.advertisementId}}" class="text-center outline-none no-underline rounded-md cursor-pointer text-sm font-medium px-5 py-3 text-[#002f34] shadow-inner" style="box-shadow: inset 0 0 0 2px #002f34;">
+              Редагувати
+            </a>
+            <button id="delete-ad-button" class="text-center outline-none no-underline rounded-md cursor-pointer text-sm font-medium px-5 py-3 text-[#002f34] shadow-inner" style="box-shadow: inset 0 0 0 2px #002f34;">
+              Видалити
+            </button>
+          </div>
+        </div>
+      </div>
+       {{/each}}
+    </div>
+    {{else}}
+    <div class="flex flex-col items-center py-20">
+      <img src="/icons/advertisements-icon.svg" class="inline-block align-middle mb-12">
+      <h3 class="font-bold text-xl leading-6 mb-8">Активні оголошення відображаються тут</h3>
+      <a href="/advertisement/post" class="inline-flex items-center justify-center text-white bg-[#002F34] text-sm font-semibold rounded px-6 py-[10px] my-2 no-underline">Створити оголошення</a>
+    </div>
+    {{/if}}
+  </div>
+</section>
+
+<script src="/js/logout.js"></script>
+<script src="/js/edit-advertisement.js"></script>
+<script src="/js/delete-advertisement.js"></script>

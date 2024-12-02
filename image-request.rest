@@ -1,0 +1,21 @@
+GET https://127.0.0.1/images HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET https://127.0.0.1/images/0efdec7c-435a-4f5d-855f-76ae0d6f2199 HTTP/1.1
+Content-Type: application/json
+
+###
+
+PUT https://127.0.0.1/images/0efdec7c-435a-4f5d-855f-76ae0d6f2199 HTTP/1.1
+Content-Type: application/json
+
+{
+  "imageUrl": "https://www.bigw.com.au/medias/sys_master/images/images/h42/h22/62988009046046.jpg"
+}
+
+###
+
+DELETE https://127.0.0.1/images/0efdec7c-435a-4f5d-855f-76ae0d6f2199 HTTP/1.1
+Content-Type: application/json

@@ -1,0 +1,26 @@
+.section-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: expandCircle 1.6s ease-in-out forwards; 
+}
+
+@keyframes expandCircle {
+    0% {
+        width: 0;
+        height: 0;
+        border: 150px solid transparent; 
+    }
+    100% {
+        width: 90vw;
+        height: 90vw;
+        min-height: 768px;
+        min-width: 768px;
+        max-width: 1535px;
+        max-height: 1535px;
+        border: 150px solid #CEDDFF; 
+    }
+}

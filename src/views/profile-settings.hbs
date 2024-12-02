@@ -1,0 +1,48 @@
+<section class="pt-[72px] h-full flex flex-col">
+  <div class="w-full bg-white">
+    <div class="w-[1238px] mx-auto pt-12">
+      <div class="flex justify-between mb-6">
+        <h3 class="text-[rgb(0,47,52)] text-[32px] font-bold leading-[26px] mb-3">Налаштування</h3>
+        <form id="logout-form" action="/users/logout" method="post">
+          <button type="submit" class="text-center outline-none no-underline rounded-md transition-all duration-300 ease-in-out relative cursor-pointer text-sm font-medium px-5 py-3 text-[#002f34] shadow-inner ml-4 float-right whitespace-nowrap" style="box-shadow: inset 0 0 0 2px #002f34;">
+            Вийти
+          </button>
+        </form>
+      </div>
+
+      <ul class="p-0 m-0 flex items-center list-none leading-1 text-sm gap-[40px] max-w-full">
+        <li class="list-none box-border flex">
+          <a href="/profile-advertisements" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Оголошення
+          </a>
+        </li>
+
+        <li class="list-none box-border flex">
+          <a href="/profile-notifications" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Повідомлення
+          </a>
+        </li>
+        <li class="list-none box-border flex">
+          <a href="/profile" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Профіль
+          </a>
+        </li>
+        <li class="list-none box-border flex">
+          <a href="/profile-settings" class="text-sm leading-none antialiased box-border flex items-center h-[56px] border-b-2 border-[#002F34] font-bold text-[#002F34] pointer-events-none">
+            Налаштування
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bg-[#f2f4f5] pb-6 flex-grow">
+    <div class="w-[1238px] max-w-[calc(-64px+100vw)] py-[32px] mx-auto flex flex-col">
+      <div>
+        <button id="delete-account-button" data-user-id="{{user.userId}}">Видалити обліковий запис</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/js/logout.js"></script>
+<script src="/js/profile-settings.js"></script>

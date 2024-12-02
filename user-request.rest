@@ -1,0 +1,77 @@
+POST https://127.0.0.1/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "bob@gmail.com",
+    "password": "12345678Abc",
+    "newsletterSubscription": true
+}
+
+###
+
+POST https://127.0.0.1/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "bob@gmail.com",
+    "password": "12345678Abc"
+}
+
+###
+
+POST https://127.0.0.1/users/logout HTTP/1.1
+
+###
+
+GET https://127.0.0.1/users/profile HTTP/1.1
+
+###
+
+DELETE https://127.0.0.1/users/profile HTTP/1.1
+
+
+
+###
+
+POST https://127.0.0.1/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin"
+}
+
+###
+
+POST https://127.0.0.1/admin/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+380000000000",
+    "password": "12345678Abc",
+    "type": "moderator",
+    "newsletterSubscription": false
+}
+
+###
+
+PUT https://127.0.0.1/admin/users/1ed686bc-b603-4e71-afe1-62632824dde5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "John",
+    "type": "user",
+    "newsletterSubscription": true
+}
+
+###
+
+POST https://127.0.0.1/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "johndoe@gmail.com",
+    "password": "12345678Abc"
+}

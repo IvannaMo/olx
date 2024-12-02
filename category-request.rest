@@ -1,0 +1,31 @@
+GET https://127.0.0.1/categories HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET https://127.0.0.1/categories/0cb8cf1f-99d6-4476-946c-cf48e9a75acf HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST https://127.0.0.1/categories HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "imageUrl": "https://static-00.iconduck.com/assets.00/white-question-mark-emoji-1247x2048-fvqloczg.png",
+  "imageColor": "#FF5733"
+}
+
+###
+
+PUT https://127.0.0.1/categories/0cb8cf1f-99d6-4476-946c-cf48e9a75acf HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Updated Test"
+}
+
+###
+DELETE https://127.0.0.1/categories/0cb8cf1f-99d6-4476-946c-cf48e9a75acf HTTP/1.1
+Content-Type: application/json

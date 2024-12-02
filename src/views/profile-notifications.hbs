@@ -1,0 +1,94 @@
+<section class="pt-[72px] h-full flex flex-col">
+  <div class="w-full bg-white">
+    <div class="w-[1238px] mx-auto pt-12">
+      <div class="flex justify-between mb-6">
+        <h3 class="text-[rgb(0,47,52)] text-[32px] font-bold leading-[26px] mb-3">Повідомлення</h3>
+        <form id="logout-form" action="/users/logout" method="post">
+          <button type="submit" class="text-center outline-none no-underline rounded-md transition-all duration-300 ease-in-out relative cursor-pointer text-sm font-medium px-5 py-3 text-[#002f34] shadow-inner ml-4 float-right whitespace-nowrap" style="box-shadow: inset 0 0 0 2px #002f34;">
+            Вийти
+          </button>
+        </form>
+      </div>
+
+      <ul class="p-0 m-0 flex items-center list-none leading-1 text-sm gap-[40px] max-w-full">
+        <li class="list-none box-border flex">
+          <a href="/profile-advertisements" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Оголошення
+          </a>
+        </li>
+
+        <li class="list-none box-border flex">
+          <a href="/profile-notifications" class="text-sm leading-none antialiased box-border flex items-center h-[56px] border-b-2 border-[#002F34] font-bold text-[#002F34] pointer-events-none">
+            Повідомлення
+          </a>
+        </li>
+        <li class="list-none box-border flex">
+          <a href="/profile" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Профіль
+          </a>
+        </li>
+        <li class="list-none box-border flex">
+          <a href="/profile-settings" class="text-sm leading-none antialiased box-border cursor-pointer tap-highlight-transparent flex items-center h-[56px] text-[#7F9799] border-b-2 border-transparent no-underline">
+            Налаштування
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bg-[#f2f4f5] pb-6 flex-grow">
+    <div class="w-[1238px] max-w-[calc(-64px+100vw)] h-[calc(-58px+100vh)] min-h-[512px] max-h-[1000px] py-[32px] mx-auto flex items-stretch">
+      <div class="flex flex-col min-w-[320px] max-w-[420px] flex-shrink-0 relative bg-[#FAFBFB]">
+        <div class="flex justify-start items-center px-4 sticky h-[72px] bg-[#fafbfb]">
+          
+        </div>
+        {{#if notifications.length}}
+        <div class="flex-grow overflow-y-auto">
+          <ul class="flex flex-col gap-px bg-[#dedede] justify-start items-center text-center py-px">
+            {{#each notifications}}
+            <li data-notification-id="{{this.notificationId}}" class="flex w-full cursor-pointer bg-[#FAFBFB] items-start justify-between p-4">
+              <div class="flex items-center flex-grow">
+                <div class="relative h-[44px] w-[44px] rounded-full overflow-hidden">
+                  <img src="{{#if this.sender.profileImageUrl}}{{this.sender.profileImageUrl}}{{else}}/icons/user-icon.svg{{/if}}" class="w-full h-full object-cover" />
+                </div>
+            
+                <div class="ml-2 flex flex-col text-sm items-start flex-grow">
+                  <p class="notification-sender text-[#7F9799]">{{this.sender.name}}</p>
+                  <p class="notification-item text-[#002f34]">item name</p>
+                  <p class="notification-message text-[#406367]">{{this.message}}</p>
+                </div>
+              </div>
+            
+              <p class="notification-date text-xs text-[#7F9799]">{{formatDate this.sendDate}}</p>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        {{else}}
+        <div class="flex flex-col justify-start items-center text-center pt-6">
+          <img width="140" height="140" src="/icons/conversation-icon.svg">
+          <h4 class="text-center text-[#002F34] font-bold text-xl leading-[22px] my-5 mb-1">Повідомлень поки немає</h4>
+          <p class="text-center text-[#406367] font-normal text-base leading-[20px] mt-4 px-4">Як тільки ви отримаєте повідомлення, воно з'явиться тут.</p>
+        </div>
+        {{/if}}
+      </div>
+      <div class="min-w-[400px] ml-4 flex flex-col flex-grow items-stretch bg-[#fafbfb] relative">
+        <div id="notification-container" class="flex-col w-full h-full hidden">
+          <div id="notification" class="flex flex-col w-full flex-grow py-12 px-9 gap-2 overflow-y-auto">
+          </div>
+          {{!-- <div class="h-px w-full bg-[#dedede]"></div>
+          <div class="py-[14px] px-5 w-full bg-white">
+            <input id="send-notification-input" class="h-full w-full placeholder-gray-400 outline-none" placeholder="Напишіть повідомлення...">
+          </div> --}}
+        </div>
+        
+        <div id="default-notification-container" class="flex flex-col justify-center items-center w-full h-full py-6 px-10">
+          <img width="192" height="192" src="/icons/conversation-icon.svg">
+          <p class="text-[#002f34] font-normal text-base leading-[20px] no-underline mt-8">Виберіть повідомлення, щоб прочитати його</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/js/logout.js"></script>
+<script src="/js/view-notification.js"></script>

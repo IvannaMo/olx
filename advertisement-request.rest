@@ -1,0 +1,22 @@
+GET https://127.0.0.1/advertisements HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET https://127.0.0.1/advertisements/2dc2b95a-d4e7-44b7-88bf-ea63f53f179a HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE https://127.0.0.1/advertisements/2dc2b95a-d4e7-44b7-88bf-ea63f53f179a HTTP/1.1
+
+
+
+###
+
+PUT https://127.0.0.1/admin/advertisements/2dc2b95a-d4e7-44b7-88bf-ea63f53f179a/status HTTP/1.1
+Content-Type: application/json
+
+{
+    "status": "sold"
+}

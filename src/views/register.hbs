@@ -1,0 +1,122 @@
+<section class="relative flex items-center justify-center w-full h-screen overflow-hidden bg-[#3A77FF] section-circle">
+  <div class="z-10 w-full max-w-[400px] inline-block self-center mb-6 bg-white rounded-lg">
+    <div class="flex flex-col px-8">
+      <div class="w-full">
+        <div class="relative w-full h-14">
+          <div class="absolute top-0 left-0 right-0 bottom-0 flex overflow-auto">
+            <a href="/login" class="flex items-center justify-center w-1/2 h-14 px-4 bg-white border-b-[1px] border-[#7F9799] cursor-pointer hover:shadow-[inset_0_-6px_#002F34] hover:border-[#002F34] box-border">
+              <span class="text-sm leading-tight font-normal text-[#406367] cursor-pointer">Увійти</span>
+            </a>
+            <a href="/register" class="flex items-center justify-center w-1/2 h-14 px-4 bg-white border-b-4 border-[#002F34] cursor-pointer pointer-events-none box-border">
+              <span class="text-sm leading-tight font-normal text-[#406367] cursor-pointer">Зареєструватися</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <form id="registration-form" method="post" class="flex flex-col mb-6">
+          <div class="w-full">
+            <label for="email" class="block mb-2 text-sm text-[#002F34]">Електронна пошта</label>
+            <div class="relative inline-block w-full">
+              <input id="email" name="email" type="email" class="w-full h-12 px-4 text-base text-[#002F34] bg-[#F2F4F5] border-b-2 border-transparent rounded focus:outline-none focus:border-[#002F34]">
+            </div>
+            <div id="email-error" class="mt-1 text-xs leading-none text-[#ff5636]"></div>
+          </div>
+
+          <div class="mt-4">
+            <div class="w-full">
+              <label for="password" class="block mb-2 text-sm text-[#002F34]">Пароль</label>
+              <div class="relative inline-block w-full">
+                <input autocomplete="off" id="password" name="password" type="password" class="w-full h-12 px-4 pr-12 text-base text-[#002F34] bg-[#F2F4F5] border-b-2 border-transparent rounded focus:outline-none focus:border-[#002F34]" value="">
+                <div class="absolute right-4 top-1/2 flex items-center transform -translate-y-1/2 pointer-events-none">
+                  <div class="cursor-pointer h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="h-6 w-6 text-[#406367]">
+                      <path fill="currentColor" fill-rule="evenodd" d="M9.042 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm2 0c0 .551.449 1 1 1 .55 0 1-.449 1-1 0-.551-.45-1-1-1-.551 0-1 .449-1 1Z" clip-rule="evenodd"></path>
+                      <path fill="currentColor" fill-rule="evenodd" d="M2 12c1.29-4.047 5.295-7 10.042-7s8.75 2.953 10.042 7c-1.291 4.047-5.295 7-10.042 7S3.29 16.047 2 12Zm2.13 0c1.249 2.974 4.408 5 7.912 5 3.504 0 6.663-2.026 7.912-5-1.25-2.974-4.408-5-7.912-5-3.504 0-6.663 2.026-7.912 5Z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div id="password-error" class="mt-1 text-xs leading-none text-[#ff5636]"></div>
+            </div>
+
+            <div class="pr-6 mt-2">
+              <p class="mb-1 text-xs leading-5 font-normal text-gray-800">Ваш пароль має містити:</p>
+              <div class="flex items-center">
+                <div class="h-4 w-4 mr-1">
+                  <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <rect width="14" height="14" rx="8" fill="white"></rect>
+                    <rect x="2" y="7" width="10" height="2" fill="#7F9799"></rect>
+                  </svg>
+                </div>
+                <p id="password-char-count" class="text-xs leading-5 text-gray-800">9 або більше символів</p>
+              </div>           
+              <div class="mt-1">
+                <div class="flex items-center">
+                  <div class="h-4 w-4 mr-1">
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                      <rect width="14" height="14" rx="8" fill="white"></rect>
+                      <rect x="2" y="7" width="10" height="2" fill="#7F9799"></rect>
+                    </svg>
+                  </div>
+                  <p id="password-upper-сhar" class="text-xs leading-5 text-gray-800">Велику літеру</p>
+                </div>
+              </div>
+              <div class="mt-1">
+                <div class="flex items-center">
+                  <div class="h-4 w-4 mr-1">
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                      <rect width="14" height="14" rx="8" fill="white"></rect>
+                      <rect x="2" y="7" width="10" height="2" fill="#7F9799"></rect>
+                    </svg>
+                  </div>
+                  <p id="password-lower-сhar" class="text-xs leading-5 text-gray-800">Малу літеру</p>
+                </div>
+              </div>
+              <div class="mt-1">
+                <div class="flex items-center">
+                  <div class="h-4 w-4 mr-1">
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                      <rect width="14" height="14" rx="8" fill="white"></rect>
+                      <rect x="2" y="7" width="10" height="2" fill="#7F9799"></rect>
+                    </svg>
+                  </div>
+                  <p id="password-digit" class="text-xs leading-5 text-gray-800">Мінімум одну цифру</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex pt-1 mt-6">
+            <label class="relative inline-flex items-start cursor-pointer h-6 w-6">
+              <input 
+                id="newsletter-subscription" 
+                name="newsletterSubscription"
+                type="checkbox" 
+                class="h-6 w-6 cursor-pointer appearance-none"
+                value="true"
+              >
+              <div class="absolute top-0 left-0 cursor-pointer">
+                <svg id="checkbox-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20,2a2,2,0,0,1,2,2V20a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V4A2,2,0,0,1,4,2H20m0-2H4A4,4,0,0,0,0,4V20a4,4,0,0,0,4,4H20a4,4,0,0,0,4-4V4a4,4,0,0,0-4-4Z"
+                    class="fill-current text-[#002F34]"
+                  ></path>
+                </svg>
+              </div>
+            </label>
+            <label for="newsletter-subscription" class="relative mt-[-6px] ml-4 cursor-pointer select-none text-xs leading-[18px] text-[#002F34] top-1">
+              Так, я хочу отримувати інформацію про новини та акції OLX.
+            </label>
+          </div>
+
+          <button type="submit" class="flex items-center justify-center h-12 px-8 mt-8 mb-0 text-base font-bold leading-[20px] tracking-[0.7px] text-white bg-[#002F34] border-none rounded cursor-pointer">Зареєструватися</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/js/checkbox-toggle.js"></script>
+<script src="/js/register-validation.js"></script>

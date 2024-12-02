@@ -1,0 +1,31 @@
+GET https://127.0.0.1/notifications HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET https://127.0.0.1/notifications/6a59345f-e87f-4aa4-8ff6-0769882d2085 HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST https://127.0.0.1/notifications HTTP/1.1
+Content-Type: application/json
+
+{
+  "receiverId": "2539e003-67e4-4a09-ac45-83b8e89bed2e",
+  "message": "Test notification"
+}
+
+###
+
+PUT https://127.0.0.1/notifications/6a59345f-e87f-4aa4-8ff6-0769882d2085 HTTP/1.1
+Content-Type: application/json
+
+{
+  "message": "Updated test notification"
+}
+
+###
+
+DELETE https://127.0.0.1/notifications/6a59345f-e87f-4aa4-8ff6-0769882d2085 HTTP/1.1
+Content-Type: application/json
